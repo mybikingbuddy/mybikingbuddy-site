@@ -2,92 +2,238 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MyBikingBuddy</title>
-  <meta name="description" content="Instant Peloton ride feedback, deep performance analytics, and long-term insights from your complete riding history." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --peloton-red: #e10600;
+      --text-dark: #111;
+      --text-muted: #666;
+      --bg-light: #ffffff;
+      --bg-cream: #faf7f2;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 32px;
+    }
+
+    /* FITNESS AGE */
+    .fitness-age {
+      max-width: 900px;
+      margin: 0 auto 36px;
+    }
+
+    .fitness-age-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .fitness-age-bar {
+      background: #eee;
+      height: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .fitness-age-fill {
+      width: 65%;
+      height: 100%;
+      background: var(--peloton-red);
+    }
+
+    .fitness-age-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* PROFILE */
+    .profile {
+      display: flex;
+      justify-content: center;
+      margin: 36px 0;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #f2bcbc;
+      object-fit: cover;
+    }
+
+    /* STORY */
+    .story-card {
+      background: var(--bg-cream);
+      border: 2px solid #d6b25e;
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    .story-card h2 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .story-card p {
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    /* AI FEEDBACK */
+    .ai-section {
+      max-width: 900px;
+      margin: 0 auto 48px;
+      border-left: 6px solid var(--peloton-red);
+      padding: 20px 24px;
+      background: #fff;
+    }
+
+    .ai-section h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .ride-notes {
+      font-style: italic;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .ai-feedback {
+      line-height: 1.6;
+    }
+
+    .ai-timestamp {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* STATS */
+    .stats-grid {
+      background: var(--peloton-red);
+      padding: 28px;
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .stat {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+    }
+  </style>
 </head>
 
 <body>
-  <main class="container">
-  <header class="hero">
-  <div class="hero-container">
+  <div class="container">
 
-    <div class="hero-left">
-      <h1>Coaching feedback that actually responds to your ride.</h1>
+    <h1>MyBikingBuddy Elite Athlete Dashboard</h1>
 
-      <p class="hero-subhead">
-        Write how it felt. Upload the data. Get AI coaching that understands
-        context, fatigue, and intent.
-      </p>
+    <div class="fitness-age">
+      <div class="fitness-age-header">
+        <span>FITNESS AGE: <strong>45.26 YEARS YOUNG</strong></span>
+        <span>55.80 YEARS OLD</span>
+      </div>
 
-      <div class="hero-cta">
-        <a class="btn primary" href="https://mybikingbuddy.glide.page" target="_blank">
-          Start Pedaling
-        </a>
-        <a class="btn secondary" href="https://mybikingbuddy.glide.page" target="_blank">
-          Open Dashboard
-        </a>
+      <div class="fitness-age-bar">
+        <div class="fitness-age-fill"></div>
+      </div>
+
+      <div class="fitness-age-note">
+        Fitness Age compares your recent performance to age-based output benchmarks.
       </div>
     </div>
 
-    <div class="hero-right">
-      <div class="ai-card">
+    <div class="profile">
+      <img src="profile.jpg" alt="Profile photo">
+    </div>
 
-        <div class="ai-section notes">
-          <div class="ai-label">Ride notes</div>
-          <p>
-            Lifted legs hard yesterday. Gym was freezing and hard to breathe.
-            Aiming for 500kJ but legs were cooked.
-          </p>
-        </div>
+    <div class="story-card">
+      <h2>★ IamPeloton Peloton Story ★</h2>
 
-        <div class="ai-section feedback">
-          <div class="ai-label accent">AI coaching feedback</div>
-          <p>
-            Pushing 243 watts for thirty minutes on fatigued legs in a freezing
-            environment is a testament to your discipline. While you missed your
-            500kJ target, the output remains high given the restricted breathing
-            and prior leg work. Accept the 437kJ as a survival metric under these
-            conditions, but do not let falling short of your standard become a habit.
-          </p>
-        </div>
+      <p>
+        IamPeloton began a transformative journey on December 1, 2017, defined by
+        unwavering consistency and long-term dedication.
+      </p>
 
-        <div class="ai-footer">
-          Generated minutes after your ride
-        </div>
+      <p>
+        Over six years and 1,692 rides, this work represents a disciplined commitment
+        to showing up regardless of circumstances.
+      </p>
 
+      <p>
+        With 21,861.94 miles logged, this record stands as proof that progress is built
+        through sustained effort, not single moments.
+      </p>
+    </div>
+
+    <div class="ai-section">
+      <h3>AI Coaching Feedback</h3>
+
+      <div class="ride-notes">
+        Lifted legs hard yesterday. Gym was freezing and hard to breathe. Aiming for 500kJ but legs were cooked.
       </div>
+
+      <div class="ai-feedback">
+        Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment
+        is a testament to discipline. While you missed your 500kJ target, the output
+        remains high given the restricted breathing and prior leg work. Accept 437kJ
+        as a survival metric under these conditions, but do not allow falling short
+        of your standard to become a habit.
+      </div>
+
+      <div class="ai-timestamp">
+        Generated minutes after your ride
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-label">TOTAL RIDES</div><div class="stat-value">1,692</div></div>
+      <div class="stat"><div class="stat-label">TOTAL OUTPUT</div><div class="stat-value">909,438 kJ</div></div>
+      <div class="stat"><div class="stat-label">TOTAL CALORIES</div><div class="stat-value">922,096 kcal</div></div>
+      <div class="stat"><div class="stat-label">MILES PEDALLED</div><div class="stat-value">21,862 mi</div></div>
+      <div class="stat"><div class="stat-label">TOTAL MINUTES</div><div class="stat-value">59,449 min</div></div>
+      <div class="stat"><div class="stat-label">AVG CADENCE</div><div class="stat-value">78 RPM</div></div>
+      <div class="stat"><div class="stat-label">AVG RESISTANCE</div><div class="stat-value">59%</div></div>
+      <div class="stat"><div class="stat-label">NEXT RIDE</div><div class="stat-value">—</div></div>
     </div>
 
   </div>
-</header>
-    <section class="features">
-      <div class="feature">
-        <h3>Instant ride feedback</h3>
-        <p>See what changed, what improved, and what stood out, minutes after you upload.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Yearly and all-time PRs</h3>
-        <p>Track progress across months, seasons, and years, not just single rides.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Instructor insights</h3>
-        <p>Understand how different instructors impact your output, cadence, and effort.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Long-term trends</h3>
-        <p>Spot performance patterns that are invisible inside Peloton’s native views.</p>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>© MyBikingBuddy</p>
-    </footer>
-  </main>
 </body>
 </html>
-
