@@ -8,14 +8,13 @@
 <style>
 /* === CORE ARCHITECTURE === */
 :root {
-  --peloton-red: #ff3347; /* Brighter, more aggressive red */
+  --peloton-red: #ff3347; 
   --peloton-dark: #1a1a1a;
   --peloton-black: #000000;
   --slate: #6b7280;
   --bg-color: #f4f6f8;
   --card-bg: #ffffff;
   --gold: #d4a017;
-  --success: #10b981;
 }
 
 * { box-sizing: border-box; }
@@ -25,27 +24,17 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--peloton-dark);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* === HERO SECTION (The Hook) === */
+/* === HERO SECTION === */
 .hero {
-  background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, #000 0%, #222 100%);
   color: white;
-  padding: 60px 24px 80px;
+  padding: 60px 24px 90px;
   text-align: center;
   position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--peloton-red), #ff6b6b);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .hero h1 {
@@ -53,82 +42,68 @@ body {
   font-weight: 800;
   margin: 0 0 10px;
   letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
 .hero p {
   font-size: 1.1rem;
   color: #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .fitness-badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 8px 16px;
+  background: rgba(255, 51, 71, 0.15);
+  padding: 6px 14px;
   border-radius: 50px;
-  border: 1px solid rgba(255,255,255,0.2);
-  font-size: 0.9rem;
-  font-weight: 600;
+  border: 1px solid var(--peloton-red);
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #fff;
+  letter-spacing: 1px;
 }
-
-.fitness-badge strong { color: var(--peloton-red); }
 
 /* === MAIN CONTAINER === */
 .container {
-  max-width: 1100px;
-  margin: -50px auto 0; /* Pulls content up into the hero */
+  max-width: 1000px;
+  margin: -60px auto 0;
   padding: 0 24px 60px;
   position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-/* === AVATAR & IDENTITY === */
+/* === AVATAR === */
 .identity-bar {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   border: 4px solid var(--card-bg);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  background-color: #eee;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  background-color: #333;
   object-fit: cover;
 }
 
-/* === DASHBOARD GRID === */
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
-/* === CARD STYLING === */
+/* === CARDS === */
 .card {
   background: var(--card-bg);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
-}
-
-/* === AI COACH SECTION (The Crown Jewel) === */
-.card.ai-coach {
+/* === ROW 1: AI COACH === */
+.ai-coach {
   border-left: 6px solid var(--peloton-red);
-  grid-column: 1 / -1; /* Spans full width */
   background: linear-gradient(to right, #fff, #fffafa);
 }
 
@@ -144,8 +119,6 @@ body {
 .ai-title {
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--peloton-dark);
-  letter-spacing: 1px;
   font-size: 0.85rem;
   display: flex;
   align-items: center;
@@ -163,31 +136,30 @@ body {
   color: var(--slate);
   font-style: italic;
   margin-bottom: 12px;
-  background: #f8f9fa;
+  background: #f4f6f8;
   padding: 10px;
   border-radius: 8px;
-  border-left: 3px solid #ccc;
 }
 
 .coach-response {
-  font-size: 1.05rem;
-  color: #333;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #222;
   font-weight: 500;
 }
 
-/* === STATS WIDGETS === */
-.stat-group {
+/* === ROW 2: STATS GRID === */
+.stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
 }
 
-.stat-widget {
+.stat-box {
   background: #f8f9fa;
   padding: 16px;
   border-radius: 12px;
   text-align: center;
+  border: 1px solid #eef0f2;
 }
 
 .stat-label {
@@ -195,81 +167,86 @@ body {
   text-transform: uppercase;
   color: var(--slate);
   letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .stat-value {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--peloton-dark);
 }
 
-/* === THE LEGACY STORY === */
-.legacy-card {
-  border: 1px solid #e5e7eb;
+/* === ROW 3: TABLE === */
+.table-header {
+  padding: 15px 20px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  border-radius: 16px 16px 0 0;
+  font-weight: 700;
 }
 
-.legacy-card h2 {
-  font-size: 1.25rem;
-  margin-top: 0;
-  color: var(--gold);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.legacy-text {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.7;
-}
-
-/* === DATA TABLE === */
 .table-wrapper {
   overflow-x: auto;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  min-width: 600px; /* Forces scroll on mobile */
+  font-size: 0.9rem;
 }
 
 th {
-  background: #f8f9fa;
+  text-align: left;
+  padding: 12px 20px;
+  color: var(--slate);
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: var(--slate);
-  padding: 14px;
-  text-align: left;
-  border-bottom: 2px solid #e5e7eb;
+  background: #fff;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 td {
-  padding: 14px;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #eee;
-  color: #333;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f4f4f4;
 }
 
-tr:last-child td { border-bottom: none; }
-tr:hover { background-color: #fcfcfc; }
-
-/* === ANIMATIONS === */
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
+/* === ROW 4: STORY (BOTTOM) === */
+.legacy-card {
+  background: #111; /* Dark Theme for Contrast */
+  color: #f0f0f0;
+  border: 2px solid var(--gold);
+  position: relative;
+  margin-top: 20px;
 }
 
-/* === MOBILE TWEAKS === */
+.legacy-card h2 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--gold);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.legacy-text p {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+.legacy-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Animation */
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+/* Mobile */
 @media (max-width: 600px) {
-  .hero h1 { font-size: 1.8rem; }
-  .dashboard-grid { grid-template-columns: 1fr; }
-  .container { margin-top: -30px; }
+  .hero { padding-bottom: 80px; }
+  .stat-value { font-size: 1.25rem; }
 }
 </style>
 </head>
@@ -278,81 +255,59 @@ tr:hover { background-color: #fcfcfc; }
 
   <div class="hero">
     <h1>MyBikingBuddy</h1>
-    <p>Elite Athlete Analytics & AI Coaching Platform</p>
-    <div class="fitness-badge">
-      FITNESS AGE: <strong>45.2 YEARS</strong>
-    </div>
+    <p>Elite Athlete Analytics Platform</p>
+    <div class="fitness-badge">FITNESS AGE: 45.2 YEARS</div>
   </div>
 
   <div class="container">
     
     <div class="identity-bar">
-      <img src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PbsOrKdl1vK7czeMle0h/pub/eiiPKNbiMyTIvlLK2DlC.jpg" alt="IamPeloton" class="avatar">
+      <img src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PbsOrKdl1vK7czeMle0h/pub/eiiPKNbiMyTIvlLK2DlC.jpg" alt="Profile" class="avatar">
     </div>
 
-    <div class="dashboard-grid">
-      
-      <div class="card ai-coach">
-        <div class="ai-header">
-          <div class="ai-title">INTELLIGENCE FEED: COACH "POWER & PRECISION"</div>
-          <div style="font-size: 0.8rem; color: #999;">Generated: 14m ago</div>
-        </div>
-        
-        <div class="user-note">
-          "Lifted legs hard yesterday. Gym was freezing and hard to breathe. Aiming for 500kJ but legs were cooked."
-        </div>
-        
-        <div class="coach-response">
-          "Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment is a testament to discipline. While you missed your 500kJ target, the output remains high given the conditions. Accept 437kJ as a survival metric, but do not allow falling short of your standard to become a habit."
-        </div>
+    <div class="card ai-coach">
+      <div class="ai-header">
+        <div class="ai-title">COACH: "POWER & PRECISION"</div>
+        <div style="font-size: 0.75rem; color: #999;">LIVE FEED</div>
       </div>
-
-      <div class="card">
-        <h3 style="margin-top:0; font-size:1rem; color: #999; text-transform:uppercase;">Metric Engine</h3>
-        <div class="stat-group">
-          <div class="stat-widget">
-            <div class="stat-label">Total Rides</div>
-            <div class="stat-value">1,692</div>
-          </div>
-          <div class="stat-widget">
-            <div class="stat-label">Total Output (kJ)</div>
-            <div class="stat-value">909k</div>
-          </div>
-          <div class="stat-widget">
-            <div class="stat-label">Distance (mi)</div>
-            <div class="stat-value">21,862</div>
-          </div>
-          <div class="stat-widget">
-            <div class="stat-label">Avg Output</div>
-            <div class="stat-value" style="color:var(--peloton-red);">243w</div>
-          </div>
-        </div>
+      <div class="user-note">
+        "Lifted legs hard yesterday. Gym was freezing. Aiming for 500kJ but legs were cooked."
       </div>
-
-      <div class="card legacy-card">
-        <h2>
-          <span>★</span> The IamPeloton Legacy
-        </h2>
-        <div class="legacy-text">
-          <p>IamPeloton began a transformative journey on December 1, 2017. Joining at a time when the community was still in its formative years, they have remained a steadfast presence through the evolution of the platform.</p>
-          <p>The true scale of this legacy is reflected in the cumulative distance traveled: <strong>21,861.94 miles</strong>. To cover such a distance requires endurance and mental fortitude that few achieve.</p>
-        </div>
+      <div class="coach-response">
+        "Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment is a testament to discipline. While you missed your 500kJ target, the output remains high given the conditions. Accept 437kJ as a survival metric, but do not allow falling short of your standard to become a habit."
       </div>
-
     </div>
 
-    <div class="card" style="padding: 0; overflow: hidden;">
-      <div style="padding: 20px 24px; border-bottom: 1px solid #eee; background: #fafafa;">
-        <h3 style="margin:0; font-size:1rem;">Instructor Performance Matrix</h3>
+    <div class="card">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">Total Rides</div>
+          <div class="stat-value">1,692</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Output (kJ)</div>
+          <div class="stat-value">909k</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Miles</div>
+          <div class="stat-value">21,862</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Avg Output</div>
+          <div class="stat-value" style="color:var(--peloton-red);">243w</div>
+        </div>
       </div>
+    </div>
+
+    <div class="card" style="padding:0; overflow:hidden;">
+      <div class="table-header">Instructor Performance</div>
       <div class="table-wrapper">
         <table>
           <thead>
             <tr>
               <th>Instructor</th>
               <th>Rides</th>
-              <th>Total Output</th>
-              <th>Distance</th>
+              <th>Output</th>
               <th>Avg Watts</th>
             </tr>
           </thead>
@@ -361,25 +316,37 @@ tr:hover { background-color: #fcfcfc; }
               <td>Leanne Hainsby-Alldis</td>
               <td>52</td>
               <td>22,736 kJ</td>
-              <td>554 mi</td>
               <td><strong>270</strong></td>
             </tr>
             <tr>
               <td>Cody Rigsby</td>
               <td>18</td>
               <td>8,341 kJ</td>
-              <td>204 mi</td>
               <td><strong>264</strong></td>
             </tr>
             <tr>
               <td>Jess King</td>
               <td>168</td>
               <td>67,200 kJ</td>
-              <td>1,240 mi</td>
               <td><strong>230</strong></td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <div class="card legacy-card">
+      <h2>★ IamPeloton Peloton Story ★</h2>
+      <div class="legacy-text">
+        <p>
+          IamPeloton began a transformative journey on December 1, 2017, marking the start of a tenure defined by unwavering consistency and long-term dedication. Joining at a time when the community was still in its formative years, they have remained a steadfast presence through the evolution of the platform.
+        </p>
+        <p>
+          Over the course of more than six years, this commitment has been solidified through 1,692 individual rides. This volume of work represents more than just a fitness routine; it is a relentless pursuit of excellence and a daily decision to show up, regardless of the circumstances.
+        </p>
+        <p>
+          The true scale of this legacy is reflected in the cumulative distance traveled: 21,861.94 miles. To cover such a distance—nearly equivalent to a full circumnavigation of the globe—requires a level of endurance and mental fortitude that few achieve. As a seasoned veteran of the saddle, IamPeloton has demonstrated that true success is not found in a single sprint, but in the steady, disciplined accumulation of effort over time. This record stands as a permanent mark of perseverance and a blueprint for what can be achieved through years of focused intent and grit.
+        </p>
       </div>
     </div>
 
