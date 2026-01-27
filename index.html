@@ -3,128 +3,123 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyBikingBuddy | Athlete Dashboard</title>
+<title>MyBikingBuddy</title>
 
 <style>
-/* === GLIDE APP AESTHETIC === */
+/* === STRICT GLIDE REPLICA STYLES === */
 :root {
-  --app-bg: #f4f4f4;       /* Light Grey Background */
-  --card-bg: #ffffff;      /* Pure White Cards */
-  --text-main: #111111;    /* High Contrast Text */
-  --text-muted: #666666;
-  --peloton-red: #e60023;  /* The Official Red */
-  --gold-border: #d4a017;
-  --story-bg: #fffaf2;     /* The Beige Story Background */
-  --border-radius: 12px;
+  --bg-color: #ffffff;
+  --text-primary: #111111;
+  --text-secondary: #737373;
+  --separator: #e5e5e5;
+  --peloton-red: #ff3347; 
+  --story-bg: #fffaf2;
+  --story-border: #d4a017;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--app-bg);
-  color: var(--text-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
 }
 
-/* === MOBILE APP CONTAINER === */
 .app-container {
-  max-width: 500px; /* Constrained to match phone screenshot */
+  max-width: 480px; /* Exact mobile width */
   margin: 0 auto;
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
-/* === HERO / PROFILE SECTION === */
-.hero-card {
-  background: transparent;
+/* === 1. HERO & PRICING (IMG_E07DCF05) === */
+.hero-section {
   text-align: center;
-  padding: 10px 0 20px;
+  margin-bottom: 10px;
 }
 
-.page-title {
-  font-size: 1.1rem;
+.hero-title {
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--text-main);
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #eee;
 }
 
 .fitness-age-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 0.5px;
+  font-size: 0.7rem;
   font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
   text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
 .fitness-age-value {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--text-main);
   margin-bottom: 12px;
 }
 
-/* Progress Bar (Matches Screenshot) */
-.progress-track {
-  background: #e0e0e0;
-  height: 8px;
-  border-radius: 10px;
+.progress-bar {
   width: 80%;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
   margin: 0 auto 24px;
   overflow: hidden;
 }
 
 .progress-fill {
-  background: var(--peloton-red);
   width: 65%;
   height: 100%;
+  background-color: var(--peloton-red);
 }
 
-/* === PRICING ACTION BUTTON (HERO) === */
-.subscribe-btn {
-  background-color: var(--peloton-red);
-  color: white;
-  text-decoration: none;
-  padding: 14px 0;
-  border-radius: 8px;
-  font-weight: 600;
+/* PRICING BUTTON (Integrated into Hero) */
+.join-btn {
   display: block;
   width: 100%;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(230, 0, 35, 0.3);
-  transition: transform 0.1s;
-}
-
-.subscribe-btn:active { transform: scale(0.98); }
-
-/* === COMPONENT: AI COACH CARD === */
-.card-ai {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 20px;
-  border-left: 6px solid var(--peloton-red); /* The Red Accent Strip */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.ai-label {
-  font-size: 0.85rem;
+  background-color: var(--peloton-red);
+  color: white;
   font-weight: 700;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+/* === 2. AI COACH CARD === */
+.ai-card {
+  background: #ffffff;
+  border: 1px solid var(--separator);
+  border-left: 5px solid var(--peloton-red);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.ai-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--peloton-red);
   margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
+  text-transform: uppercase;
 }
 
 .ai-text {
@@ -133,99 +128,89 @@ body {
   color: #333;
 }
 
-.user-notes {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: #777;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-/* === COMPONENT: STATS LIST === */
-/* Matches image_3094e2.jpg list style */
-.stats-card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+/* === 3. STATS LIST (image_3094e2.jpg - Verbatim) === */
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--separator);
 }
 
 .stat-row {
   display: flex;
   justify-content: space-between;
-  padding: 16px 20px;
-  border-bottom: 1px solid #f0f0f0;
   align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--separator);
 }
 
-.stat-row:last-child { border-bottom: none; }
-
-.stat-name {
-  font-size: 0.9rem;
-  color: #555;
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
 }
 
-.stat-number {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-main);
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
-/* === COMPONENT: TABLE (Clean White) === */
-.table-card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+/* === 4. INSTRUCTOR TABLE === */
+.table-container {
+  border: 1px solid var(--separator);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
 }
 
 th {
+  background: #f9f9f9;
   text-align: left;
-  color: #888;
-  font-weight: 600;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #eee;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--separator);
 }
 
 td {
-  padding: 12px 0;
-  border-bottom: 1px solid #f9f9f9;
-  color: #333;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--separator);
+  font-size: 0.9rem;
 }
 
-/* === COMPONENT: STORY (Beige/Gold) === */
-.story-card {
-  background: var(--story-bg); /* The Light Yellow */
-  border: 2px solid var(--gold-border);
-  border-radius: var(--border-radius);
+tr:last-child td { border-bottom: none; }
+
+/* === 5. STORY SECTION (Bottom - Beige/Gold) === */
+.story-section {
+  background-color: var(--story-bg);
+  border: 2px solid var(--story-border);
+  border-radius: 12px;
   padding: 24px;
-  text-align: center;
+  margin-top: 20px;
 }
 
-.story-title {
-  color: #bfa15f; /* Muted Gold for Text */
-  font-size: 1rem;
+.story-header {
+  text-align: center;
+  color: #b08d55; /* Muted Gold */
   font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 16px;
   text-transform: uppercase;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.story-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #2c2c2c;
 }
 
 .story-text p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #444;
-  text-align: left;
   margin-bottom: 12px;
 }
-
 </style>
 </head>
 
@@ -233,56 +218,62 @@ td {
 
 <div class="app-container">
 
-  <div class="hero-card">
-    <h1 class="page-title">MyBikingBuddy Elite Dashboard</h1>
+  <div class="hero-section">
+    <div class="hero-title">MyBikingBuddy Elite Athlete Dashboard</div>
     
     <img src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PbsOrKdl1vK7czeMle0h/pub/eiiPKNbiMyTIvlLK2DlC.jpg" alt="Profile" class="avatar">
     
     <div class="fitness-age-label">FITNESS AGE</div>
     <div class="fitness-age-value">45.26 YEARS YOUNG</div>
     
-    <div class="progress-track">
+    <div class="progress-bar">
       <div class="progress-fill"></div>
     </div>
 
-    <a href="https://stripe.com" class="subscribe-btn">
-      JOIN ELITE SQUAD - $4.99/mo
+    <a href="https://buy.stripe.com/your-link-here" class="join-btn">
+      Unlock Elite Analytics - $4.99/mo
     </a>
   </div>
 
-  <div class="card-ai">
-    <div class="ai-label">
-      <span>AI COACH FEEDBACK</span>
-      <span style="color:#999; font-weight:400; font-size:0.75rem;">Just now</span>
-    </div>
-    <div class="user-notes">
-      "Lifted legs hard yesterday. Gym was freezing. Aiming for 500kJ but legs were cooked."
-    </div>
+  <div class="ai-card">
+    <div class="ai-header">AI Coach "Power & Precision"</div>
     <div class="ai-text">
-      Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment is a testament to discipline. While you missed your 500kJ target, the output remains high given the conditions. Accept 437kJ as a survival metric, but do not allow falling short of your standard to become a habit.
+      "Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment is a testament to discipline. While you missed your 500kJ target, the output remains high given the conditions. Accept 437kJ as a survival metric, but do not allow falling short of your standard to become a habit."
     </div>
   </div>
 
-  <div class="stats-card">
+  <div class="stats-list">
     <div class="stat-row">
-      <span class="stat-name">Total Rides</span>
-      <span class="stat-number">1,692</span>
+      <span class="stat-label">Total Rides</span>
+      <span class="stat-value">1,692</span>
     </div>
     <div class="stat-row">
-      <span class="stat-name">Total Output</span>
-      <span class="stat-number">909,438 kJ</span>
+      <span class="stat-label">Total Output</span>
+      <span class="stat-value">909,438 kJ</span>
     </div>
     <div class="stat-row">
-      <span class="stat-name">Total Distance</span>
-      <span class="stat-number">21,861 mi</span>
+      <span class="stat-label">Total Calories</span>
+      <span class="stat-value">922,096 kcal</span>
     </div>
     <div class="stat-row">
-      <span class="stat-name">Avg Output</span>
-      <span class="stat-number" style="color:var(--peloton-red);">243 W</span>
+      <span class="stat-label">Miles Pedaled</span>
+      <span class="stat-value">21,862 mi</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Total Minutes</span>
+      <span class="stat-value">59,449 min</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Avg Cadence</span>
+      <span class="stat-value">78 RPM</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Avg Resistance</span>
+      <span class="stat-value">59%</span>
     </div>
   </div>
 
-  <div class="table-card">
+  <div class="table-container">
     <table>
       <thead>
         <tr>
@@ -293,26 +284,26 @@ td {
       </thead>
       <tbody>
         <tr>
-          <td>Leanne Hainsby-Alldis</td>
+          <td>Leanne Hainsby</td>
           <td>52</td>
-          <td>22,736</td>
+          <td>22,736 kJ</td>
         </tr>
         <tr>
           <td>Cody Rigsby</td>
           <td>18</td>
-          <td>8,341</td>
+          <td>8,341 kJ</td>
         </tr>
         <tr>
           <td>Jess King</td>
           <td>168</td>
-          <td>67,200</td>
+          <td>67,200 kJ</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="story-card">
-    <h2 class="story-title">★ IamPeloton Peloton Story ★</h2>
+  <div class="story-section">
+    <div class="story-header">★ IamPeloton Peloton Story ★</div>
     <div class="story-text">
       <p>IamPeloton began a transformative journey on December 1, 2017, marking the start of a tenure defined by unwavering consistency and long-term dedication. Joining at a time when the community was still in its formative years, they have remained a steadfast presence through the evolution of the platform.</p>
       <p>Over the course of more than six years, this commitment has been solidified through 1,692 individual rides. This volume of work represents more than just a fitness routine; it is a relentless pursuit of excellence and a daily decision to show up, regardless of the circumstances.</p>
