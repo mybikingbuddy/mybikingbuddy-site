@@ -126,4 +126,66 @@ body {
     text-align: center;
   }
 }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.hero-card {
+  background: #ffffff;
+  color: #111;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.card-section {
+  padding: 20px 22px;
+}
+
+.card-section.notes {
+  background: #f6f7f9;
+  font-size: 0.95rem;
+}
+
+.card-section.ai {
+  background: #ffffff;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.card-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.card-label.accent {
+  color: #e60023; /* Peloton red */
+}
+
+.card-footer {
+  padding: 12px 22px;
+  font-size: 0.75rem;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    margin-top: 32px;
+  }
+}
 
