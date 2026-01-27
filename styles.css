@@ -188,4 +188,114 @@ body {
     margin-top: 32px;
   }
 }
+/* Hero base */
+.hero {
+  background: #f8f9fb;
+  padding: 80px 24px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Left */
+.hero-left h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.hero-subhead {
+  font-size: 1.05rem;
+  color: #6b7280;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+/* AI Card */
+.ai-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.ai-section {
+  padding: 20px 22px;
+}
+
+.ai-section.notes {
+  background: #f3f4f6;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.ai-section.feedback {
+  background: #ffffff;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #111827;
+}
+
+.ai-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.ai-label.accent {
+  color: #e24a4a; /* subtle Peloton reminder */
+}
+
+.ai-footer {
+  padding: 12px 22px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    margin-top: 32px;
+  }
+}
 
