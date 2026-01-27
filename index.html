@@ -1,239 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MyBikingBuddy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MyBikingBuddy Elite Athlete Dashboard</title>
 
-  <style>
-    :root {
-      --peloton-red: #e10600;
-      --text-dark: #111;
-      --text-muted: #666;
-      --bg-light: #ffffff;
-      --bg-cream: #faf7f2;
-    }
+<style>
+/* =====================
+   BASE
+===================== */
+body {
+  margin: 0;
+  padding: 40px 24px 80px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-    }
+h1, h2, h3 {
+  margin: 0;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 24px 64px;
-    }
+p {
+  margin: 0 0 12px;
+  line-height: 1.55;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 30px;
-      margin-bottom: 32px;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    /* FITNESS AGE */
-    .fitness-age {
-      max-width: 900px;
-      margin: 0 auto 36px;
-    }
+/* =====================
+   HEADER
+===================== */
+.page-title {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 18px;
+}
 
-    .fitness-age-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
+/* =====================
+   FITNESS AGE BAR
+===================== */
+.fitness-age {
+  margin: 24px auto 36px;
+  max-width: 900px;
+}
 
-    .fitness-age-bar {
-      background: #eee;
-      height: 10px;
-      border-radius: 6px;
-      overflow: hidden;
-    }
+.fitness-age-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
 
-    .fitness-age-fill {
-      width: 65%;
-      height: 100%;
-      background: var(--peloton-red);
-    }
+.fitness-bar {
+  height: 10px;
+  background: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+}
 
-    .fitness-age-note {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
+.fitness-bar-fill {
+  height: 100%;
+  width: 68%;
+  background: #e60023;
+}
 
-    /* PROFILE */
-    .profile {
-      display: flex;
-      justify-content: center;
-      margin: 36px 0;
-    }
+/* =====================
+   PROFILE
+===================== */
+.profile {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 36px;
+}
 
-    .profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid #f2bcbc;
-      object-fit: cover;
-    }
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f2b6be;
+}
 
-    /* STORY */
-    .story-card {
-      background: var(--bg-cream);
-      border: 2px solid #d6b25e;
-      border-radius: 16px;
-      padding: 28px;
-      max-width: 900px;
-      margin: 0 auto 40px;
-    }
+/* =====================
+   STORY CARD
+===================== */
+.story-card {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  background: #fffaf3;
+  border: 2px solid #e3b341;
+  border-radius: 18px;
+  padding: 26px 30px;
+}
 
-    .story-card h2 {
-      text-align: center;
-      margin-bottom: 16px;
-    }
+.story-card h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
 
-    .story-card p {
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
+/* =====================
+   AI FEEDBACK
+===================== */
+.ai-card {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  background: #ffffff;
+  border-left: 10px solid #e60023;
+  border-radius: 16px;
+  padding: 26px 30px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
 
-    /* AI FEEDBACK */
-    .ai-section {
-      max-width: 900px;
-      margin: 0 auto 48px;
-      border-left: 6px solid var(--peloton-red);
-      padding: 20px 24px;
-      background: #fff;
-    }
+.ai-card h2 {
+  margin-bottom: 10px;
+}
 
-    .ai-section h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 18px;
-    }
+.ai-notes {
+  font-style: italic;
+  color: #555;
+}
 
-    .ride-notes {
-      font-style: italic;
-      color: #333;
-      margin-bottom: 16px;
-    }
+.ai-footer {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #777;
+}
 
-    .ai-feedback {
-      line-height: 1.6;
-    }
+/* =====================
+   STATS GRID
+===================== */
+.stats-band {
+  background: #e60023;
+  border-radius: 28px;
+  padding: 30px;
+}
 
-    .ai-timestamp {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 10px;
-    }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
 
-    /* STATS */
-    .stats-grid {
-      background: var(--peloton-red);
-      padding: 28px;
-      border-radius: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+.stat {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 20px;
+}
 
-    .stat {
-      background: #fff;
-      border-radius: 14px;
-      padding: 18px;
-    }
+.stat span {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 4px;
+}
 
-    .stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
+.stat strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
 
-    .stat-value {
-      font-size: 22px;
-      font-weight: 700;
-    }
-  </style>
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 700px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .profile img {
+    width: 96px;
+    height: 96px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <h1>MyBikingBuddy Elite Athlete Dashboard</h1>
+  <h1 class="page-title">MyBikingBuddy Elite Athlete Dashboard</h1>
 
-    <div class="fitness-age">
-      <div class="fitness-age-header">
-        <span>FITNESS AGE: <strong>45.26 YEARS YOUNG</strong></span>
-        <span>55.80 YEARS OLD</span>
-      </div>
-
-      <div class="fitness-age-bar">
-        <div class="fitness-age-fill"></div>
-      </div>
-
-      <div class="fitness-age-note">
-        Fitness Age compares your recent performance to age-based output benchmarks.
-      </div>
+  <!-- FITNESS AGE -->
+  <div class="fitness-age">
+    <div class="fitness-age-label">
+      <span>Fitness Age: <strong>45.26 years young</strong></span>
+      <span>55.80 years old</span>
     </div>
-
-    <div class="profile">
-      <img src="profile.jpg" alt="Profile photo">
+    <div class="fitness-bar">
+      <div class="fitness-bar-fill"></div>
     </div>
-
-    <div class="story-card">
-      <h2>★ IamPeloton Peloton Story ★</h2>
-
-      <p>
-        IamPeloton began a transformative journey on December 1, 2017, defined by
-        unwavering consistency and long-term dedication.
-      </p>
-
-      <p>
-        Over six years and 1,692 rides, this work represents a disciplined commitment
-        to showing up regardless of circumstances.
-      </p>
-
-      <p>
-        With 21,861.94 miles logged, this record stands as proof that progress is built
-        through sustained effort, not single moments.
-      </p>
-    </div>
-
-    <div class="ai-section">
-      <h3>AI Coaching Feedback</h3>
-
-      <div class="ride-notes">
-        Lifted legs hard yesterday. Gym was freezing and hard to breathe. Aiming for 500kJ but legs were cooked.
-      </div>
-
-      <div class="ai-feedback">
-        Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment
-        is a testament to discipline. While you missed your 500kJ target, the output
-        remains high given the restricted breathing and prior leg work. Accept 437kJ
-        as a survival metric under these conditions, but do not allow falling short
-        of your standard to become a habit.
-      </div>
-
-      <div class="ai-timestamp">
-        Generated minutes after your ride
-      </div>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-label">TOTAL RIDES</div><div class="stat-value">1,692</div></div>
-      <div class="stat"><div class="stat-label">TOTAL OUTPUT</div><div class="stat-value">909,438 kJ</div></div>
-      <div class="stat"><div class="stat-label">TOTAL CALORIES</div><div class="stat-value">922,096 kcal</div></div>
-      <div class="stat"><div class="stat-label">MILES PEDALLED</div><div class="stat-value">21,862 mi</div></div>
-      <div class="stat"><div class="stat-label">TOTAL MINUTES</div><div class="stat-value">59,449 min</div></div>
-      <div class="stat"><div class="stat-label">AVG CADENCE</div><div class="stat-value">78 RPM</div></div>
-      <div class="stat"><div class="stat-label">AVG RESISTANCE</div><div class="stat-value">59%</div></div>
-      <div class="stat"><div class="stat-label">NEXT RIDE</div><div class="stat-value">—</div></div>
-    </div>
-
   </div>
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <img src="profile.jpg" alt="Profile photo">
+  </div>
+
+  <!-- STORY -->
+  <div class="story-card">
+    <h3>★ iamPeloton Peloton Story ★</h3>
+    <p>
+      iamPeloton began a transformative journey on December 1, 2017, defined by unwavering consistency and long-term dedication.
+    </p>
+    <p>
+      Over six years and 1,692 rides, this represents disciplined commitment regardless of circumstances.
+    </p>
+    <p>
+      With 21,861.94 miles logged, progress is proven through sustained effort, not isolated moments.
+    </p>
+  </div>
+
+  <!-- AI FEEDBACK -->
+  <div class="ai-card">
+    <h2>AI Coaching Feedback</h2>
+    <p class="ai-notes">
+      Lifted legs hard yesterday. Gym was freezing and hard to breathe. Aiming for 500kJ but legs were cooked.
+    </p>
+    <p>
+      Pushing 243 watts for thirty minutes on fatigued legs in a freezing environment shows discipline.
+      While the 500kJ target was missed, output remained strong given prior leg work and restricted breathing.
+      Accept 437kJ as a survival metric under these conditions, but do not allow it to redefine your standard.
+    </p>
+    <div class="ai-footer">Generated minutes after your ride</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stats-grid">
+      <div class="stat"><span>Total Rides</span><strong>1,692</strong></div>
+      <div class="stat"><span>Total Output</span><strong>909,438 kJ</strong></div>
+      <div class="stat"><span>Total Calories</span><strong>922,096 kcal</strong></div>
+      <div class="stat"><span>Miles Pedaled</span><strong>21,862 mi</strong></div>
+      <div class="stat"><span>Total Minutes</span><strong>59,449</strong></div>
+      <div class="stat"><span>Avg Cadence</span><strong>78 RPM</strong></div>
+      <div class="stat"><span>Avg Resistance</span><strong>59%</strong></div>
+      <div class="stat"><span>Next Ride</span><strong>—</strong></div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
