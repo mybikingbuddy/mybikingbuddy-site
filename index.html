@@ -1,302 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MyBikingBuddy</title>
+  <meta charset="UTF-8" />
+  <title>MyBikingBuddy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-:root {
-  --red: #e53935;
-  --bg: #f6f8fa;
-  --text: #111;
-  --muted: #555;
-  --border: #e6e6e6;
-}
+  <style>
+    :root {
+      --red: #e53935;
+      --bg: #f6f7f9;
+      --text: #111;
+      --muted: #555;
+      --border: #e6e6e6;
+    }
 
-* { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-/* HEADER */
-header {
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-}
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  font-size: 20px;
-}
+    .brand span {
+      color: var(--red);
+    }
 
-.brand span.my { color: var(--red); }
+    .login-btn {
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
-.brand img {
-  height: 34px;
-}
+    /* Main container */
+    .page {
+      max-width: 1200px;
+      margin: 32px auto 80px;
+      padding: 0 24px;
+    }
 
-.login-btn {
-  border: 1.5px solid var(--red);
-  color: var(--red);
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-}
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 64px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
 
-/* MAIN CARD */
-.main-card {
-  max-width: 1200px;
-  margin: 36px auto;
-  background: #fff;
-  border-radius: 22px;
-  padding: 56px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-}
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
 
-/* HERO */
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
-  align-items: center;
-}
+    .pill {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  line-height: 1.05;
-  margin: 0 0 16px;
-}
+    h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
 
-.hero h1 .my { color: var(--red); }
+    h1 span {
+      color: var(--red);
+    }
 
-.hero p.lead {
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 520px;
-}
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
 
-.badge {
-  display: inline-block;
-  background: #f3f3f3;
-  color: #666;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 999px;
-  margin: 18px 0;
-}
+    .hero-copy h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
 
-.hero-image img {
-  width: 100%;
-  max-width: 420px;
-}
+    .hero-copy p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 520px;
+    }
 
-/* SECTION */
-.section {
-  margin-top: 56px;
-}
+    .hero img {
+      width: 100%;
+      max-width: 420px;
+      justify-self: end;
+    }
 
-.section h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
+    /* Pricing */
+    .pricing {
+      margin-top: 80px;
+    }
 
-.section p {
-  color: var(--muted);
-  max-width: 640px;
-}
+    .pricing h3 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
 
-/* PRICING */
-.pricing {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 28px;
-}
+    .pricing p {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
 
-.plan {
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 26px;
-}
+    .plans {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
 
-.plan.featured {
-  border: 2px solid var(--red);
-}
+    .plan {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+    }
 
-.price {
-  font-size: 34px;
-  font-weight: 900;
-  color: var(--red);
-}
+    .plan.featured {
+      border: 2px solid var(--red);
+    }
 
-.plan ul {
-  padding-left: 18px;
-  color: #333;
-}
+    .plan h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
 
-.plan a {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: 800;
-  text-decoration: none;
-}
+    .price {
+      font-size: 36px;
+      color: var(--red);
+      font-weight: 800;
+      margin: 12px 0;
+    }
 
-.plan a.primary {
-  background: var(--red);
-  color: #fff;
-}
+    .plan ul {
+      margin: 20px 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
 
-.plan a.secondary {
-  border: 1.5px solid var(--red);
-  color: var(--red);
-}
+    .plan li {
+      margin-bottom: 8px;
+    }
 
-/* LOGIN CALLOUT */
-.login-callout {
-  margin-top: 20px;
-  font-weight: 700;
-}
+    .cta {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--red);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
 
-.login-callout a {
-  color: var(--red);
-  text-decoration: none;
-}
+    .login-inline {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
 
-/* GALLERY */
-.gallery {
-  margin-top: 64px;
-}
+    .login-inline a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+    /* Gallery */
+    .gallery {
+      margin-top: 80px;
+    }
 
-.gallery-grid img {
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+    .gallery h3 {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-  .pricing {
-    grid-template-columns: 1fr;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      max-width: 1000px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero img {
+        justify-self: center;
+      }
+
+      .plans {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="brand">
-      <img src="images/mbb-bike.png" alt="MBB" />
-      <div><span class="my">My</span> BikingBuddy</div>
-    </div>
-    <a class="login-btn" href="https://mybikingbuddy.glide.page/">Log in to MBB</a>
+  <div class="brand">
+    <span>My</span>BikingBuddy
   </div>
+  <a class="login-btn" href="https://mybikingbuddy.glide.page/">Log in to MBB</a>
 </header>
 
-<main class="main-card">
+<main class="page">
+  <section class="card">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>Welcome to <span class="my">My</span>BikingBuddy</h1>
-      <p class="lead">
-        Where every ride comes alive with instant feedback and deep analysis from your complete Peloton story.
-      </p>
-      <div class="badge">ANALYSIS COMPLETE</div>
-      <h2>Your ride became something you can learn from.</h2>
-      <p>
-        MyBikingBuddy connects your ride data, notes, and full history into coaching that reflects how you actually ride.
-      </p>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="pill">ANALYSIS COMPLETE</div>
+        <h1>Welcome to <span>My</span>BikingBuddy</h1>
+        <p class="subtitle">
+          Where every ride comes alive with instant feedback and deep analysis from your complete Peloton story.
+        </p>
+
+        <h2>Your ride became something you can learn from.</h2>
+        <p>
+          MyBikingBuddy connects your ride data, notes, and full history into coaching that reflects how you actually ride.
+        </p>
+      </div>
+
+      <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
     </div>
-    <div class="hero-image">
-      <img src="images/mbb-bike.png" alt="MBB Bike" />
-    </div>
-  </section>
 
-  <!-- PRICING -->
-  <section class="section">
-    <h2>Unlock Your Full Peloton Story</h2>
-    <p>
-      See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
-    </p>
-
+    <!-- PRICING -->
     <div class="pricing">
-      <div class="plan">
-        <h3>Monthly</h3>
-        <div class="price">$4.99 <span style="font-size:14px;color:#777;">/ month</span></div>
-        <ul>
-          <li>Full performance insights</li>
-          <li>Records and trends</li>
-          <li>Personalized coaching</li>
-          <li>Cancel anytime</li>
-        </ul>
-        <a class="secondary" href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00">Choose Monthly</a>
+      <h3>Unlock Your Full Peloton Story</h3>
+      <p>
+        See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
+      </p>
+
+      <div class="plans">
+        <div class="plan">
+          <h4>Monthly</h4>
+          <div class="price">$4.99 <span style="font-size:16px;color:#666;">/ month</span></div>
+          <ul>
+            <li>Full performance insights</li>
+            <li>Records, PRs, trends</li>
+            <li>Personalized coaching</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <a class="cta" href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00">Choose Monthly</a>
+        </div>
+
+        <div class="plan featured">
+          <h4>Annual</h4>
+          <div class="price">$39.99 <span style="font-size:16px;color:#666;">/ year</span></div>
+          <ul>
+            <li>Everything in Monthly</li>
+            <li>Save over 30%</li>
+            <li>One payment, full year</li>
+            <li>No surprises</li>
+          </ul>
+          <a class="cta" href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02">Annual · $39.99</a>
+        </div>
       </div>
 
-      <div class="plan featured">
-        <h3>Annual</h3>
-        <div class="price">$39.99 <span style="font-size:14px;color:#777;">/ year</span></div>
-        <ul>
-          <li>Everything in Monthly</li>
-          <li>Save over 30%</li>
-          <li>One payment, full year</li>
-          <li>No surprises</li>
-        </ul>
-        <a class="primary" href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02">Annual · $39.99</a>
+      <div class="login-inline">
+        Already a member? <a href="https://mybikingbuddy.glide.page/">Log in to MBB</a>
       </div>
     </div>
 
-    <div class="login-callout">
-      Already a member? <a href="https://mybikingbuddy.glide.page/">Log in to MBB</a>
-    </div>
-  </section>
+    <!-- GALLERY -->
+    <div class="gallery">
+      <h3>Inside MyBikingBuddy</h3>
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <div class="gallery-grid">
-      <img src="images/hero-1.png" />
-      <img src="images/hero-2.png" />
-      <img src="images/hero-3.png" />
-      <img src="images/hero-4.png" />
-      <img src="images/hero-5.png" />
-      <img src="images/hero-6.png" />
+      <div class="gallery-grid">
+        <img src="images/hero-1.png" alt="Hero 1" />
+        <img src="images/hero-2.png" alt="Hero 2" />
+        <img src="images/hero-3.png" alt="Hero 3" />
+        <img src="images/hero-4.png" alt="Hero 4" />
+        <img src="images/hero-5.png" alt="Hero 5" />
+        <img src="images/hero-6.png" alt="Hero 6" />
+      </div>
     </div>
-  </section>
 
+  </section>
 </main>
 
 </body>
