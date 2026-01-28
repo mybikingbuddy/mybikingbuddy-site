@@ -3,220 +3,137 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyBikingBuddy | Elite Dashboard</title>
+<title>MyBikingBuddy</title>
 
 <style>
-/* === CORE STYLING === */
-:root {
-  --bg-color: #f7f9fc;
-  --card-bg: #ffffff;
-  --text-main: #111111;
-  --text-muted: #666666;
-  --peloton-red: #df1c2f;
-  --story-bg: #fffaf2;
-  --story-border: #d4a017;
-  --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-}
+  body {
+    margin: 0;
+    background: #f7f9fc;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #111;
+  }
 
-* { box-sizing: border-box; }
+  .hero-wrap {
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 40px 44px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-}
+  .image-section {
+    max-width: 860px;
+    margin: 0 auto 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 
-/* === NAV === */
-.navbar {
-  background: #ffffff;
-  padding: 16px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+  .image-section img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
 
-.brand-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.pricing-cta {
-  background-color: var(--peloton-red);
-  color: white;
-  text-decoration: none;
-  padding: 10px 24px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-/* === HERO + IMAGE FLOW === */
-.hero-wrap {
-  max-width: 860px;
-  margin: 40px auto 0;
-  padding: 40px 44px;
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #eee;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.image-flow {
-  max-width: 860px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.image-flow img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
-  margin-bottom: 48px;
-}
-
-/* === DASHBOARD === */
-.dashboard-container {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 30px;
-}
-
-/* === PROFILE === */
-.profile-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  margin-bottom: 20px;
-}
-
-.user-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.member-badge {
-  background: #eee;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-/* === CONTENT === */
-.content-area {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.ai-coach-box {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: var(--shadow);
-  border-left: 8px solid var(--peloton-red);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.stat-card {
-  background: var(--card-bg);
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-.story-box {
-  background: var(--story-bg);
-  border: 2px solid var(--story-border);
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: var(--shadow);
-}
-
-@media (max-width: 768px) {
-  .dashboard-container { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-}
+  @media (max-width: 768px) {
+    .hero-wrap {
+      padding: 32px 26px;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-  <div class="brand-logo">MyBikingBuddy</div>
-  <a href="@User / Stripe_Monthly_URL" class="pricing-cta">Get Elite Access · $4.99/mo</a>
-</nav>
-
 <!-- HERO -->
 <div class="hero-wrap">
-  <h1 style="font-size:48px;font-weight:900;margin-bottom:14px;">Welcome to MyBikingBuddy</h1>
-  <p style="font-size:22px;font-weight:600;">
-    Where every ride comes alive with instant feedback and deep analysis from your complete Peloton story.
+
+  <div style="text-align: center; margin-bottom: 28px;">
+    <h1 style="font-size: 48px; font-weight: 900; line-height: 1.05; margin: 0 0 14px;">
+      Welcome to MyBikingBuddy
+    </h1>
+
+    <p style="font-size: 22px; font-weight: 600; line-height: 1.4; margin: 0; max-width: 720px; margin-left: auto; margin-right: auto;">
+      Where every ride comes alive with instant feedback and deep analysis from your complete Peloton story.
+    </p>
+  </div>
+
+  <div style="display:inline-block;background:#e53935;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em;padding:6px 14px;border-radius:999px;margin-bottom:14px;">
+    ANALYSIS COMPLETE
+  </div>
+
+  <h2 style="font-size:40px;font-weight:900;line-height:1.1;margin:0 0 12px;max-width:720px;">
+    Your ride just became something you can learn from.
+  </h2>
+
+  <p style="font-size:18px;line-height:1.45;margin:0 0 20px;max-width:640px;">
+    MyBikingBuddy connects your ride data, notes, and full history into coaching that reflects how you actually ride.
   </p>
+
+  <div style="height:1px;background:#eee;margin:22px 0 26px;"></div>
+
+  <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#e53935;margin-bottom:6px;">
+    GO DEEPER
+  </div>
+
+  <h3 style="font-size:28px;font-weight:800;margin:0 0 14px;">
+    Unlock Your Full Peloton Story
+  </h3>
+
+  <p style="font-size:16px;line-height:1.5;margin:0 0 22px;max-width:620px;">
+    See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px;">
+
+    <div style="border:1px solid #eee;border-radius:12px;padding:20px 22px;">
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Monthly</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
+        <span style="font-size:28px;font-weight:900;color:#e53935;">$4.99</span>
+        <span style="font-size:14px;color:#666;">/ month</span>
+      </div>
+      <ul style="padding-left:18px;font-size:14px;line-height:1.5;">
+        <li>Full performance insights across every ride</li>
+        <li>Records, PRs, and long-term trends</li>
+        <li>Personalized coaching from your ride context</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a href="@User / Stripe_Monthly_URL" target="_blank" style="display:inline-block;padding:8px 14px;font-size:14px;font-weight:700;color:#e53935;border:1px solid #e53935;border-radius:8px;text-decoration:none;">
+        Choose Monthly
+      </a>
+    </div>
+
+    <div style="border:2px solid #e53935;border-radius:12px;padding:20px 22px;">
+      <div style="font-size:12px;font-weight:800;color:#e53935;margin-bottom:4px;">BEST VALUE</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Annual</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
+        <span style="font-size:28px;font-weight:900;color:#e53935;">$39.99</span>
+        <span style="font-size:14px;color:#666;">/ year</span>
+      </div>
+      <ul style="padding-left:18px;font-size:14px;line-height:1.5;">
+        <li>Everything in Monthly</li>
+        <li>Save over 30% vs monthly</li>
+        <li>One payment, full year access</li>
+        <li>No renewal surprises</li>
+      </ul>
+      <a href="@User / Stripe_Annual_URL" target="_blank" style="display:inline-block;padding:10px 16px;font-size:14px;font-weight:700;color:#fff;background:#e53935;border-radius:8px;text-decoration:none;">
+        Annual · $39.99 / year
+      </a>
+    </div>
+
+  </div>
 </div>
 
 <!-- IMAGES -->
-<div class="image-flow">
-  <img src="images/hero-1.png">
-  <img src="images/hero-2.png">
-  <img src="images/hero-3.png">
-  <img src="images/hero-4.png">
-  <img src="images/hero-5.png">
-  <img src="images/hero-6.png">
-</div>
-
-<!-- DASHBOARD -->
-<div class="dashboard-container">
-
-  <aside class="profile-card">
-    <img src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PbsOrKdl1vK7czeMle0h/pub/eiiPKNbiMyTIvlLK2DlC.jpg" class="avatar">
-    <div class="user-name">IamPeloton</div>
-    <div class="member-badge">FOUNDING MEMBER</div>
-  </aside>
-
-  <main class="content-area">
-    <div class="ai-coach-box">
-      <strong>Coach Power & Precision</strong>
-      <p>Pushing 243 watts for thirty minutes on fatigued legs is discipline, not luck.</p>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat-card">Total Output<br><strong>909,438 kJ</strong></div>
-      <div class="stat-card">Miles<br><strong>21,861</strong></div>
-      <div class="stat-card">Rides<br><strong>1,692</strong></div>
-    </div>
-
-    <div class="story-box">
-      <strong>IamPeloton Story</strong>
-      <p>Six years. Daily discipline. Relentless output.</p>
-    </div>
-  </main>
-
+<div class="image-section">
+  <img src="images/hero-1.png" alt="">
+  <img src="images/hero-2.png" alt="">
+  <img src="images/hero-3.png" alt="">
+  <img src="images/hero-4.png" alt="">
+  <img src="images/hero-5.png" alt="">
+  <img src="images/hero-6.png" alt="">
 </div>
 
 </body>
