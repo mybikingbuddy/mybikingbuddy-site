@@ -36,16 +36,14 @@
       justify-content: space-between;
     }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  font-weight: 800;
-  font-size: 20px;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      font-weight: 800;
+      font-size: 20px;
+    }
 
-
-    .brand span {
+    .brand-my {
       color: var(--red);
     }
 
@@ -96,10 +94,6 @@
       font-size: 48px;
       line-height: 1.15;
       margin-bottom: 16px;
-    }
-
-    h1 span {
-      color: var(--red);
     }
 
     .subtitle {
@@ -248,9 +242,14 @@
 
 <header>
   <div class="brand">
-    <span>My</span>BikingBuddy
+    <span class="brand-my">My</span>BikingBuddy
   </div>
-  <a class="login-btn" href="https://mybikingbuddy.glide.page/">Log in to MBB</a>
+  <a class="login-btn"
+     href="https://mybikingbuddy.glide.page/"
+     target="_blank"
+     rel="noopener noreferrer">
+     Log in to MBB
+  </a>
 </header>
 
 <main class="page">
@@ -260,14 +259,14 @@
     <div class="hero">
       <div class="hero-copy">
         <div class="pill">ANALYSIS COMPLETE</div>
-        <h1>Welcome to <span>My</span>BikingBuddy</h1>
+        <h1>Welcome to <span class="brand-my">My</span>BikingBuddy</h1>
         <p class="subtitle">
           Where every ride comes alive with instant feedback and deep analysis from your complete Peloton story.
         </p>
 
         <h2>Your ride became something you can learn from.</h2>
         <p>
-          MyBikingBuddy connects your ride data, notes, and full history into coaching that reflects how you actually ride.
+          <span class="brand-my">My</span>BikingBuddy connects your ride data, notes, and full history into coaching that reflects how you actually ride.
         </p>
       </div>
 
@@ -291,7 +290,12 @@
             <li>Personalized coaching</li>
             <li>Cancel anytime</li>
           </ul>
-          <a class="cta" href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00">Choose Monthly</a>
+          <a class="cta"
+             href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00"
+             target="_blank"
+             rel="noopener noreferrer">
+             Choose Monthly
+          </a>
         </div>
 
         <div class="plan featured">
@@ -303,26 +307,36 @@
             <li>One payment, full year</li>
             <li>No surprises</li>
           </ul>
-          <a class="cta" href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02">Annual · $39.99</a>
+          <a class="cta"
+             href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02"
+             target="_blank"
+             rel="noopener noreferrer">
+             Annual · $39.99
+          </a>
         </div>
       </div>
 
       <div class="login-inline">
-        Already a member? <a href="https://mybikingbuddy.glide.page/">Log in to MBB</a>
+        Already a member?
+        <a href="https://mybikingbuddy.glide.page/"
+           target="_blank"
+           rel="noopener noreferrer">
+           Log in to MBB
+        </a>
       </div>
     </div>
 
     <!-- GALLERY -->
     <div class="gallery">
-      <h3>Inside MyBikingBuddy</h3>
+      <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
 
       <div class="gallery-grid">
-        <img src="images/hero-2.png" alt="Dashboard Overview" />
+        <img src="images/hero-2.png" alt="Dashboard overview" />
         <img src="images/hero-1.png" alt="Log new workout" />
-  <img src="images/hero-5.png" alt="Recent rides list" />
-<img src="images/hero-3.png" alt="Coaching analysis" />
-<img src="images/hero-4.png" alt="Performance tables" />
-<img src="images/hero-6.png" alt="Monthly insight summary" />
+        <img src="images/hero-5.png" alt="Recent rides list" />
+        <img src="images/hero-3.png" alt="Coaching analysis" />
+        <img src="images/hero-4.png" alt="Performance tables" />
+        <img src="images/hero-6.png" alt="Monthly insight summary" />
       </div>
     </div>
 
