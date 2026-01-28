@@ -4,136 +4,259 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyBikingBuddy</title>
-
-<style>
-  body {
-    margin: 0;
-    background: #f7f9fc;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #111;
-  }
-
-  .hero-wrap {
-    max-width: 860px;
-    margin: 40px auto;
-    padding: 40px 44px;
-    background: #ffffff;
-    border-radius: 16px;
-    border: 1px solid #eee;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-
-  .image-section {
-    max-width: 860px;
-    margin: 0 auto 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .image-section img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  }
-
-  @media (max-width: 768px) {
-    .hero-wrap {
-      padding: 32px 26px;
-    }
-  }
-</style>
 </head>
 
-<body>
+<body style="margin:0; background:#f7f7f7;">
 
-<!-- HERO -->
-<div class="hero-wrap">
+<div style="
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 40px 44px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+">
 
-  <div style="text-align: center; margin-bottom: 28px;">
-    <h1 style="font-size: 48px; font-weight: 900; line-height: 1.05; margin: 0 0 14px;">
+  <!-- TOP HEADER -->
+  <div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:28px;
+  ">
+    <div style="font-size:18px; font-weight:900; color:#111;">
+      MyBikingBuddy
+    </div>
+    <a href="https://mybikingbuddy.glide.page/"
+       style="font-size:14px; font-weight:700; color:#e53935; text-decoration:none;">
+      Log in
+    </a>
+  </div>
+
+  <!-- HERO INTRO -->
+  <div style="text-align:center; margin-bottom:28px;">
+    <h1 style="
+      font-size:48px;
+      font-weight:900;
+      line-height:1.05;
+      margin:0 0 14px 0;
+      color:#111;
+    ">
       Welcome to MyBikingBuddy
     </h1>
 
-    <p style="font-size: 22px; font-weight: 600; line-height: 1.4; margin: 0; max-width: 720px; margin-left: auto; margin-right: auto;">
+    <p style="
+      font-size:22px;
+      font-weight:600;
+      line-height:1.4;
+      margin:0 auto;
+      color:#333;
+      max-width:720px;
+    ">
       Where every ride comes alive with instant feedback and deep analysis from your complete Peloton story.
     </p>
   </div>
 
-  <div style="display:inline-block;background:#e53935;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em;padding:6px 14px;border-radius:999px;margin-bottom:14px;">
+  <!-- Badge -->
+  <div style="
+    display:inline-block;
+    background:#e53935;
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:14px;
+  ">
     ANALYSIS COMPLETE
   </div>
 
-  <h2 style="font-size:40px;font-weight:900;line-height:1.1;margin:0 0 12px;max-width:720px;">
+  <!-- Headline -->
+  <h2 style="
+    font-size:40px;
+    font-weight:900;
+    line-height:1.1;
+    margin:0 0 12px;
+    color:#111;
+    max-width:720px;
+  ">
     Your ride just became something you can learn from.
   </h2>
 
-  <p style="font-size:18px;line-height:1.45;margin:0 0 20px;max-width:640px;">
+  <!-- Subhead -->
+  <p style="
+    font-size:18px;
+    line-height:1.45;
+    color:#333;
+    margin:0 0 20px;
+    max-width:640px;
+  ">
     MyBikingBuddy connects your ride data, notes, and full history into coaching that reflects how you actually ride.
   </p>
 
-  <div style="height:1px;background:#eee;margin:22px 0 26px;"></div>
+  <!-- Divider -->
+  <div style="
+    height:1px;
+    background:#eee;
+    margin:22px 0 26px;
+  "></div>
 
-  <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#e53935;margin-bottom:6px;">
-    GO DEEPER
+  <!-- Upgrade Section -->
+  <div style="margin-bottom:36px;">
+
+    <div style="
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.06em;
+      color:#e53935;
+      margin-bottom:6px;
+    ">
+      GO DEEPER
+    </div>
+
+    <h3 style="
+      font-size:28px;
+      font-weight:800;
+      margin:0 0 14px;
+      color:#111;
+    ">
+      Unlock Your Full Peloton Story
+    </h3>
+
+    <p style="
+      font-size:16px;
+      line-height:1.5;
+      color:#444;
+      margin:0 0 22px;
+      max-width:620px;
+    ">
+      See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
+    </p>
+
+    <!-- Pricing Grid -->
+    <div style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      max-width:720px;
+    ">
+
+      <!-- Monthly -->
+      <div style="
+        border:1px solid #eee;
+        border-radius:12px;
+        padding:20px 22px;
+      ">
+        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">
+          Monthly
+        </div>
+
+        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:10px;">
+          <span style="font-size:28px; font-weight:900; color:#e53935;">$4.99</span>
+          <span style="font-size:14px; color:#666;">/ month</span>
+        </div>
+
+        <ul style="margin:0 0 14px; padding-left:18px; font-size:14px; line-height:1.5; color:#222;">
+          <li>Full performance insights across every ride</li>
+          <li>Records, PRs, and long-term trends</li>
+          <li>Personalized coaching from your ride context</li>
+          <li>Cancel anytime</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00"
+           target="_blank"
+           style="
+            display:inline-block;
+            padding:8px 14px;
+            font-size:14px;
+            font-weight:700;
+            color:#e53935;
+            border:1px solid #e53935;
+            border-radius:8px;
+            text-decoration:none;
+           ">
+          Choose Monthly
+        </a>
+      </div>
+
+      <!-- Annual -->
+      <div style="
+        border:2px solid #e53935;
+        border-radius:12px;
+        padding:20px 22px;
+      ">
+        <div style="font-size:12px; font-weight:800; color:#e53935; margin-bottom:4px;">
+          BEST VALUE
+        </div>
+
+        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">
+          Annual
+        </div>
+
+        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:10px;">
+          <span style="font-size:28px; font-weight:900; color:#e53935;">$39.99</span>
+          <span style="font-size:14px; color:#666;">/ year</span>
+        </div>
+
+        <ul style="margin:0 0 14px; padding-left:18px; font-size:14px; line-height:1.5; color:#222;">
+          <li>Everything in Monthly</li>
+          <li>Save over 30% vs monthly</li>
+          <li>One payment, full year access</li>
+          <li>No renewal surprises</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02"
+           target="_blank"
+           style="
+            display:inline-block;
+            padding:10px 16px;
+            font-size:14px;
+            font-weight:700;
+            color:#ffffff;
+            background-color:#e53935;
+            border-radius:8px;
+            text-decoration:none;
+           ">
+          Annual · $39.99 / year
+        </a>
+      </div>
+
+    </div>
+
   </div>
 
-  <h3 style="font-size:28px;font-weight:800;margin:0 0 14px;">
-    Unlock Your Full Peloton Story
-  </h3>
+  <!-- Existing Member -->
+  <div style="margin-bottom:32px; font-size:14px;">
+    Already a member?
+    <a href="https://mybikingbuddy.glide.page/"
+       style="color:#e53935; font-weight:700; text-decoration:none;">
+      Log in here
+    </a>
+  </div>
 
-  <p style="font-size:16px;line-height:1.5;margin:0 0 22px;max-width:620px;">
-    See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
+  <!-- Transition -->
+  <p style="
+    font-size:16px;
+    line-height:1.5;
+    color:#444;
+    margin-bottom:24px;
+  ">
+    Below is a real MyBikingBuddy dashboard. Every insight shown is generated from actual ride history.
   </p>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px;">
-
-    <div style="border:1px solid #eee;border-radius:12px;padding:20px 22px;">
-      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Monthly</div>
-      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-        <span style="font-size:28px;font-weight:900;color:#e53935;">$4.99</span>
-        <span style="font-size:14px;color:#666;">/ month</span>
-      </div>
-      <ul style="padding-left:18px;font-size:14px;line-height:1.5;">
-        <li>Full performance insights across every ride</li>
-        <li>Records, PRs, and long-term trends</li>
-        <li>Personalized coaching from your ride context</li>
-        <li>Cancel anytime</li>
-      </ul>
-      <a href="@User / Stripe_Monthly_URL" target="_blank" style="display:inline-block;padding:8px 14px;font-size:14px;font-weight:700;color:#e53935;border:1px solid #e53935;border-radius:8px;text-decoration:none;">
-        Choose Monthly
-      </a>
-    </div>
-
-    <div style="border:2px solid #e53935;border-radius:12px;padding:20px 22px;">
-      <div style="font-size:12px;font-weight:800;color:#e53935;margin-bottom:4px;">BEST VALUE</div>
-      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Annual</div>
-      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-        <span style="font-size:28px;font-weight:900;color:#e53935;">$39.99</span>
-        <span style="font-size:14px;color:#666;">/ year</span>
-      </div>
-      <ul style="padding-left:18px;font-size:14px;line-height:1.5;">
-        <li>Everything in Monthly</li>
-        <li>Save over 30% vs monthly</li>
-        <li>One payment, full year access</li>
-        <li>No renewal surprises</li>
-      </ul>
-      <a href="@User / Stripe_Annual_URL" target="_blank" style="display:inline-block;padding:10px 16px;font-size:14px;font-weight:700;color:#fff;background:#e53935;border-radius:8px;text-decoration:none;">
-        Annual · $39.99 / year
-      </a>
-    </div>
-
+  <!-- Screenshots -->
+  <div>
+    <img src="images/hero-1.png" style="width:100%; margin-bottom:24px;">
+    <img src="images/hero-2.png" style="width:100%; margin-bottom:24px;">
+    <img src="images/hero-3.png" style="width:100%; margin-bottom:24px;">
+    <img src="images/hero-4.png" style="width:100%; margin-bottom:24px;">
+    <img src="images/hero-5.png" style="width:100%; margin-bottom:24px;">
+    <img src="images/hero-6.png" style="width:100%;">
   </div>
-</div>
 
-<!-- IMAGES -->
-<div class="image-section">
-  <img src="images/hero-1.png" alt="">
-  <img src="images/hero-2.png" alt="">
-  <img src="images/hero-3.png" alt="">
-  <img src="images/hero-4.png" alt="">
-  <img src="images/hero-5.png" alt="">
-  <img src="images/hero-6.png" alt="">
 </div>
 
 </body>
