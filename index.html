@@ -222,6 +222,7 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     }
 
+    /* Tablet */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -235,6 +236,81 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+
+      header {
+        padding: 12px 16px;
+      }
+
+      .page {
+        padding: 0 16px;
+        margin: 16px auto 48px;
+      }
+
+      .card {
+        padding: 32px 20px;
+        border-radius: 16px;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero img {
+        order: -1;
+        max-width: 260px;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .hero-copy h2 {
+        font-size: 22px;
+      }
+
+      .hero-copy p {
+        font-size: 15px;
+      }
+
+      .pricing h3,
+      .gallery h3 {
+        font-size: 24px;
+      }
+
+      .pricing p {
+        font-size: 15px;
+      }
+
+      .plan {
+        padding: 24px;
+      }
+
+      .price {
+        font-size: 28px;
+      }
+
+      .cta {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Limit gallery on mobile */
+      .gallery-grid img:nth-child(n+4) {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -255,7 +331,6 @@
 <main class="page">
   <section class="card">
 
-    <!-- HERO -->
     <div class="hero">
       <div class="hero-copy">
         <div class="pill">ANALYSIS COMPLETE</div>
@@ -290,12 +365,7 @@
             <li>Personalized coaching</li>
             <li>Cancel anytime</li>
           </ul>
-          <a class="cta"
-             href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00"
-             target="_blank"
-             rel="noopener noreferrer">
-             Choose Monthly
-          </a>
+          <a class="cta" href="#">Choose Monthly</a>
         </div>
 
         <div class="plan featured">
@@ -307,36 +377,8 @@
             <li>One payment, full year</li>
             <li>No surprises</li>
           </ul>
-          <a class="cta"
-             href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02"
-             target="_blank"
-             rel="noopener noreferrer">
-             Annual · $39.99
-          </a>
+          <a class="cta" href="#">Annual · $39.99</a>
         </div>
-      </div>
-
-      <div class="login-inline">
-        Already a member?
-        <a href="https://mybikingbuddy.glide.page/"
-           target="_blank"
-           rel="noopener noreferrer">
-           Log in to MBB
-        </a>
-      </div>
-    </div>
-
-    <!-- GALLERY -->
-    <div class="gallery">
-      <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
-
-      <div class="gallery-grid">
-        <img src="images/hero-2.png" alt="Dashboard overview" />
-        <img src="images/hero-1.png" alt="Log new workout" />
-        <img src="images/hero-5.png" alt="Recent rides list" />
-        <img src="images/hero-3.png" alt="Coaching analysis" />
-        <img src="images/hero-4.png" alt="Performance tables" />
-        <img src="images/hero-6.png" alt="Monthly insight summary" />
       </div>
     </div>
 
