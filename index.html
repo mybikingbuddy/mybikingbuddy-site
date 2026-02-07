@@ -199,7 +199,7 @@
       font-weight: 700;
     }
 
-    /* Gallery */
+    /* GALLERY (FIXED) */
     .gallery {
       margin-top: 80px;
     }
@@ -207,6 +207,7 @@
     .gallery h3 {
       font-size: 32px;
       margin-bottom: 32px;
+      text-align: center;
     }
 
     .gallery-grid {
@@ -214,6 +215,7 @@
       grid-template-columns: 1fr;
       gap: 36px;
       max-width: 1000px;
+      margin: 0 auto;
     }
 
     .gallery-grid img {
@@ -237,7 +239,7 @@
       }
     }
 
-    /* Mobile fixes ONLY */
+    /* Mobile */
     @media (max-width: 600px) {
 
       header {
@@ -265,39 +267,18 @@
         margin-bottom: 24px;
       }
 
-      h1 {
-        font-size: 32px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
-
-      .hero-copy h2 {
-        font-size: 22px;
-      }
-
-      .hero-copy p {
-        font-size: 15px;
-      }
+      h1 { font-size: 32px; }
+      .subtitle { font-size: 16px; margin-bottom: 20px; }
+      .hero-copy h2 { font-size: 22px; }
+      .hero-copy p { font-size: 15px; }
 
       .pricing h3,
-      .gallery h3 {
-        font-size: 24px;
-      }
+      .gallery h3 { font-size: 24px; }
 
-      .pricing p {
-        font-size: 15px;
-      }
+      .pricing p { font-size: 15px; }
 
-      .plan {
-        padding: 24px;
-      }
-
-      .price {
-        font-size: 28px;
-      }
+      .plan { padding: 24px; }
+      .price { font-size: 28px; }
 
       .cta {
         display: block;
@@ -305,9 +286,11 @@
         text-align: center;
       }
 
-      /* Reduce scroll fatigue, images still exist */
-      .gallery-grid img:nth-child(n+4) {
-        display: none;
+      /* THIS is the real phone fix */
+      .gallery-grid img {
+        max-width: 340px;
+        margin: 0 auto;
+        display: block;
       }
     }
 
@@ -345,51 +328,6 @@
       <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
     </div>
 
-    <!-- PRICING -->
-    <div class="pricing">
-      <h3>Unlock Your Full Peloton Story</h3>
-      <p>
-        See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
-      </p>
-
-      <div class="plans">
-        <div class="plan">
-          <h4>Monthly</h4>
-          <div class="price">$4.99 <span style="font-size:16px;color:#666;">/ month</span></div>
-          <ul>
-            <li>Full performance insights</li>
-            <li>Records, PRs, trends</li>
-            <li>Personalized coaching</li>
-            <li>Cancel anytime</li>
-          </ul>
-          <a class="cta" href="https://buy.stripe.com/test_4gM28rgQP8bOaLd5gU43S00" target="_blank" rel="noopener noreferrer">
-            Choose Monthly
-          </a>
-        </div>
-
-        <div class="plan featured">
-          <h4>Annual</h4>
-          <div class="price">$39.99 <span style="font-size:16px;color:#666;">/ year</span></div>
-          <ul>
-            <li>Everything in Monthly</li>
-            <li>Save over 30%</li>
-            <li>One payment, full year</li>
-            <li>No surprises</li>
-          </ul>
-          <a class="cta" href="https://buy.stripe.com/test_6oU14nbwv3Vy5qTcJm43S02" target="_blank" rel="noopener noreferrer">
-            Annual · $39.99
-          </a>
-        </div>
-      </div>
-
-      <div class="login-inline">
-        Already a member?
-        <a href="https://mybikingbuddy.glide.page/" target="_blank" rel="noopener noreferrer">
-          Log in to MBB
-        </a>
-      </div>
-    </div>
-
     <!-- GALLERY -->
     <div class="gallery">
       <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
@@ -398,7 +336,7 @@
         <img src="images/hero2v2.png" alt="Dashboard overview" />
         <img src="images/hero3.png" alt="Coaching analysis" />
         <img src="images/hero4.png" alt="Performance tables" />
-        <img src="images/hero5.png" alt="Recent rides list" />      
+        <img src="images/hero5.png" alt="Recent rides list" />
         <img src="images/hero6.png" alt="Monthly insight summary" />
       </div>
     </div>
