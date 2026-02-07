@@ -1,300 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MyBikingBuddy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>MyBikingBuddy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    :root {
-      --red: #e53935;
-      --bg: #f6f7f9;
-      --text: #111;
-      --muted: #555;
-      --border: #e6e6e6;
-    }
+<style>
+:root {
+  --red: #e53935;
+  --bg: #f6f7f9;
+  --text: #111;
+  --muted: #555;
+  --border: #e6e6e6;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
 
-    /* Header */
-    header {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
-      padding: 16px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+/* Header */
+header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      font-weight: 800;
-      font-size: 20px;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 20px;
+}
 
-    .brand-my {
-      color: var(--red);
-    }
+.brand-my {
+  color: var(--red);
+}
 
-    .login-btn {
-      border: 1px solid var(--red);
-      color: var(--red);
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
+.login-btn {
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
 
-    /* Main container */
-    .page {
-      max-width: 1200px;
-      margin: 32px auto 80px;
-      padding: 0 24px;
-    }
+/* Main container */
+.page {
+  max-width: 1200px;
+  margin: 32px auto 80px;
+  padding: 0 24px;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 64px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    }
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 64px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
 
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
 
-    .pill {
-      display: inline-block;
-      background: var(--red);
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+.pill {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
-    h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
+h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
 
-    .subtitle {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 28px;
-    }
+.subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 24px;
+}
 
-    .hero-copy h2 {
-      font-size: 36px;
-      margin-bottom: 12px;
-    }
+.hero-copy h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
 
-    .hero-copy p {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 520px;
-    }
+.hero-copy p {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 520px;
+}
 
-    .hero img {
-      width: 100%;
-      max-width: 420px;
-      justify-self: end;
-    }
+.hero img {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+}
 
-    /* Pricing */
-    .pricing {
-      margin-top: 80px;
-    }
+/* GALLERY */
+.gallery {
+  margin-top: 80px;
+}
 
-    .pricing h3 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
+.gallery h3 {
+  font-size: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+}
 
-    .pricing p {
-      color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 40px;
-    }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-    .plans {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 32px;
-    }
+.gallery-grid img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
 
-    .plan {
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-    }
+/* Tablet */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-    .plan.featured {
-      border: 2px solid var(--red);
-    }
+  .hero img {
+    justify-self: center;
+  }
+}
 
-    .plan h4 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
+/* Mobile */
+@media (max-width: 600px) {
 
-    .price {
-      font-size: 36px;
-      color: var(--red);
-      font-weight: 800;
-      margin: 12px 0;
-    }
+  header {
+    padding: 12px 16px;
+  }
 
-    .plan ul {
-      margin: 20px 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
+  .page {
+    padding: 0 16px;
+    margin: 16px auto 48px;
+  }
 
-    .plan li {
-      margin-bottom: 8px;
-    }
+  .card {
+    padding: 32px 20px;
+    border-radius: 16px;
+  }
 
-    .cta {
-      display: inline-block;
-      margin-top: 16px;
-      background: var(--red);
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-    }
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .login-inline {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--muted);
-    }
+  .hero img {
+    order: -1;
+    max-width: 260px;
+    margin-bottom: 24px;
+  }
 
-    .login-inline a {
-      color: var(--red);
-      text-decoration: none;
-      font-weight: 700;
-    }
+  h1 { font-size: 32px; }
+  .subtitle { font-size: 16px; margin-bottom: 20px; }
+  .hero-copy h2 { font-size: 22px; }
+  .hero-copy p { font-size: 15px; }
 
-    /* GALLERY (FIXED) */
-    .gallery {
-      margin-top: 80px;
-    }
+  .gallery h3 { font-size: 24px; }
 
-    .gallery h3 {
-      font-size: 32px;
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-
-    /* Tablet */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero img {
-        justify-self: center;
-      }
-
-      .plans {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-
-      header {
-        padding: 12px 16px;
-      }
-
-      .page {
-        padding: 0 16px;
-        margin: 16px auto 48px;
-      }
-
-      .card {
-        padding: 32px 20px;
-        border-radius: 16px;
-      }
-
-      .hero {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .hero img {
-        order: -1;
-        max-width: 260px;
-        margin-bottom: 24px;
-      }
-
-      h1 { font-size: 32px; }
-      .subtitle { font-size: 16px; margin-bottom: 20px; }
-      .hero-copy h2 { font-size: 22px; }
-      .hero-copy p { font-size: 15px; }
-
-      .pricing h3,
-      .gallery h3 { font-size: 24px; }
-
-      .pricing p { font-size: 15px; }
-
-      .plan { padding: 24px; }
-      .price { font-size: 28px; }
-
-      .cta {
-        display: block;
-        width: 100%;
-        text-align: center;
-      }
-
-      /* THIS is the real phone fix */
-      .gallery-grid img {
-        max-width: 340px;
-        margin: 0 auto;
-        display: block;
-      }
-    }
-
-  </style>
+  .gallery-grid img {
+    max-width: 340px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -309,37 +212,50 @@
 </header>
 
 <main class="page">
-  <section class="card">
+<section class="card">
 
-    <div class="hero">
-      <div class="hero-copy">
-        <div class="pill">ANALYSIS COMPLETE</div>
-        <h1>Welcome to <span class="brand-my">My</span>BikingBuddy</h1>
-        <p class="subtitle">
-          Your Peloton ride now talks to you.
-        </p>
+<div class="hero">
 
-        <h2>Your ride became something you can learn from.</h2>
-        <p>Upload your ride summary and a quick note about how it felt.
-          <span class="brand-my">My</span>BikingBuddy reads both and shows you what happened and how it compares to your recent rides.
+  <!-- LEFT TEXT -->
+  <div class="hero-copy">
 
-      <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
-    </div>
+    <div class="pill">ANALYSIS COMPLETE</div>
 
-    <!-- GALLERY -->
-    <div class="gallery">
-      <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
-      <div class="gallery-grid">
-        <img src="images/hero1v2.png" alt="Log new workout" />
-        <img src="images/hero2v2.png" alt="Dashboard overview" />
-        <img src="images/hero3.png" alt="Coaching analysis" />
-        <img src="images/hero4.png" alt="Performance tables" />
-        <img src="images/hero5.png" alt="Recent rides list" />
-        <img src="images/hero6.png" alt="Monthly insight summary" />
-      </div>
-    </div>
+    <h1>Your Peloton ride now talks to you.</h1>
 
-  </section>
+    <p class="subtitle">
+      Upload your ride summary and a quick note about how it felt.
+      <span class="brand-my">My</span>BikingBuddy reads both and shows you what happened and how it compares to your recent rides.
+    </p>
+
+    <h2>Finally understand your rides.</h2>
+
+    <p>
+      Each ride produces a written reaction to your notes and a clear performance explanation,
+      so you can see effort patterns, fatigue, and progress over time.
+    </p>
+
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
+
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
+  <div class="gallery-grid">
+    <img src="images/hero1v2.png" alt="Log new workout" />
+    <img src="images/hero2v2.png" alt="Dashboard overview" />
+    <img src="images/hero3.png" alt="Coaching analysis" />
+    <img src="images/hero4.png" alt="Performance tables" />
+    <img src="images/hero5.png" alt="Recent rides list" />
+    <img src="images/hero6.png" alt="Monthly insight summary" />
+  </div>
+</div>
+
+</section>
 </main>
 
 </body>
