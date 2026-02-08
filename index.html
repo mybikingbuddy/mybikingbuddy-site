@@ -99,25 +99,62 @@ h1 {
 .subtitle {
   font-size: 18px;
   color: var(--muted);
-  max-width: 520px;
+  max-width: 560px;
   margin-bottom: 24px;
 }
 
 .hero-copy h2 {
-  font-size: 30px;
-  margin-bottom: 12px;
+  font-size: 28px;
+  margin-top: 22px;
+  margin-bottom: 10px;
 }
 
 .hero-copy p {
   font-size: 16px;
   color: var(--muted);
-  max-width: 520px;
+  max-width: 560px;
+}
+
+/* Minor emphasis */
+.hero-copy em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .hero img {
   width: 100%;
   max-width: 420px;
   justify-self: end;
+}
+
+/* Value bullets */
+.value {
+  margin-top: 14px;
+}
+
+.value ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.value li {
+  margin-bottom: 10px;
+}
+
+.value strong {
+  color: var(--text);
+}
+
+.callout {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.callout strong {
+  color: var(--red);
 }
 
 /* GALLERY */
@@ -214,46 +251,49 @@ h1 {
 <main class="page">
 <section class="card">
 
-<div class="hero">
+  <div class="hero">
 
-  <!-- LEFT TEXT -->
-  <div class="hero-copy">
+    <div class="hero-copy">
+      <div class="pill">AFTER EVERY RIDE</div>
 
-    <div class="pill">ANALYSIS COMPLETE</div>
+      <h1>Your ride goes beyond the leaderboard. The numbers don’t tell the whole story.</h1>
 
-    <h1>Your Peloton ride now talks to you.</h1>
+      <p class="subtitle">
+        Upload your ride summary and describe what was going on during the ride.
+        <span class="brand-my">My</span>BikingBuddy uses <em>your stats</em> and <em>your own words</em> to explain what actually happened,
+        plus how this ride compares to your recent rides.
+      </p>
 
-    <p class="subtitle">
-      Upload your ride summary and a quick note about how it felt.
-      <span class="brand-my">My</span>BikingBuddy reads both and shows you what happened and how it compares to your recent rides.
-    </p>
+      <h2>How it works</h2>
 
-    <h2>Finally understand your rides.</h2>
+      <div class="value">
+        <ul>
+          <li><strong>Upload:</strong> Add a screenshot of your Peloton ride summary.</li>
+          <li><strong>Add context:</strong> Tell us anything that mattered, tired legs, poor sleep, a recovery day, soreness, injury, or just a great day.</li>
+          <li><strong>Your ride, put into words:</strong> not just numbers anymore, whether you pushed hard, took a recovery ride, or were riding through soreness or even a small injury.</li>
+        </ul>
 
-    <p>
-      Each ride produces a written reaction to your notes and a clear performance explanation,
-      so you can see effort patterns, fatigue, and progress over time.
-    </p>
+        <p class="callout">
+          <strong>You do not need to link your Peloton account.</strong> After your ride, take a photo and we’ll handle the rest.
+        </p>
+      </div>
+    </div>
+
+    <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
 
   </div>
 
-  <!-- RIGHT IMAGE -->
-  <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
-
-</div>
-
-<!-- GALLERY -->
-<div class="gallery">
-  <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
-  <div class="gallery-grid">
-    <img src="images/hero1v2.png" alt="Log new workout" />
-    <img src="images/hero2v2.png" alt="Dashboard overview" />
-    <img src="images/hero3.png" alt="Coaching analysis" />
-    <img src="images/hero4.png" alt="Performance tables" />
-    <img src="images/hero5.png" alt="Recent rides list" />
-    <img src="images/hero6.png" alt="Monthly insight summary" />
+  <div class="gallery">
+    <h3>What your ride will look like</h3>
+    <div class="gallery-grid">
+      <img src="images/hero1v2.png" alt="Log new workout" />
+      <img src="images/hero2v2.png" alt="Dashboard overview" />
+      <img src="images/hero3.png" alt="Coaching analysis" />
+      <img src="images/hero4.png" alt="Performance tables" />
+      <img src="images/hero5.png" alt="Recent rides list" />
+      <img src="images/hero6.png" alt="Monthly insight summary" />
+    </div>
   </div>
-</div>
 
 </section>
 </main>
