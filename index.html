@@ -14,219 +14,219 @@
   --border: #e6e6e6;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing:border-box; margin:0; padding:0; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* Header */
 header {
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  padding:16px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  font-weight: 800;
-  font-size: 20px;
+  display:flex;
+  align-items:center;
+  font-weight:800;
+  font-size:20px;
 }
 
-.brand-my { color: var(--red); }
+.brand-my{ color:var(--red); }
 
-.login-btn {
-  border: 1px solid var(--red);
-  color: var(--red);
-  padding: 8px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
+.login-btn{
+  border:1px solid var(--red);
+  color:var(--red);
+  padding:8px 16px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
 }
 
-/* Main container */
-.page {
-  max-width: 1200px;
-  margin: 32px auto 80px;
-  padding: 0 24px;
+/* Layout */
+.page{
+  max-width:1200px;
+  margin:32px auto 80px;
+  padding:0 24px;
 }
 
-.card {
-  background: #fff;
-  border-radius: 24px;
-  padding: 64px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+.card{
+  background:#fff;
+  border-radius:24px;
+  padding:64px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
 }
 
-/* Hero */
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
-  align-items: center;
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:48px;
+  align-items:center;
 }
 
-.pill {
-  display: inline-block;
-  background: var(--red);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.pill{
+  display:inline-block;
+  background:var(--red);
+  color:#fff;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:20px;
 }
 
-h1 {
-  font-size: 48px;
-  line-height: 1.15;
-  margin-bottom: 16px;
+h1{
+  font-size:48px;
+  line-height:1.15;
+  margin-bottom:16px;
 }
 
-.subtitle {
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 520px;
-  margin-bottom: 24px;
+.subtitle{
+  font-size:18px;
+  color:var(--muted);
+  max-width:520px;
+  margin-bottom:24px;
 }
 
-.hero-copy h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
+.hero-copy h2{
+  font-size:32px;
+  margin-bottom:12px;
 }
 
-.hero-copy p {
-  font-size: 16px;
-  color: var(--muted);
-  max-width: 520px;
+.hero-copy p{
+  font-size:16px;
+  color:var(--muted);
+  max-width:520px;
 }
 
-.hero img {
-  width: 100%;
-  max-width: 420px;
-  display: block;
-  margin: 0 auto;
+.hero img{
+  width:100%;
+  max-width:420px;
+  justify-self:end;
 }
+
 /* Pricing */
-.pricing { margin-top: 80px; }
+.pricing{ margin-top:80px; }
 
-.pricing h3 { font-size: 32px; margin-bottom: 12px; }
+.pricing h3{ font-size:32px; margin-bottom:12px; }
 
-.pricing p {
-  color: var(--muted);
-  max-width: 700px;
-  margin-bottom: 40px;
+.pricing p{
+  color:var(--muted);
+  max-width:700px;
+  margin-bottom:40px;
 }
 
-.plans {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-bottom: 32px;
+.plans{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  margin-bottom:32px;
 }
 
-.plan {
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
+.plan{
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:32px;
 }
 
-.plan.featured { border: 2px solid var(--red); }
+.plan.featured{ border:2px solid var(--red); }
 
-.plan h4 { font-size: 20px; margin-bottom: 8px; }
+.plan h4{ font-size:20px; margin-bottom:8px; }
 
-.price {
-  font-size: 36px;
-  color: var(--red);
-  font-weight: 800;
-  margin: 12px 0;
+.price{
+  font-size:36px;
+  color:var(--red);
+  font-weight:800;
+  margin:12px 0;
 }
 
-.plan ul {
-  margin: 20px 0;
-  padding-left: 18px;
-  color: var(--muted);
+.plan ul{
+  margin:20px 0;
+  padding-left:18px;
+  color:var(--muted);
 }
 
-.plan li { margin-bottom: 8px; }
+.plan li{ margin-bottom:8px; }
 
-.cta {
-  display: inline-block;
-  margin-top: 16px;
-  background: var(--red);
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
+.cta{
+  display:inline-block;
+  margin-top:16px;
+  background:var(--red);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
 }
 
-.login-inline {
-  margin-top: 12px;
-  font-size: 14px;
-  color: var(--muted);
+.login-inline{
+  margin-top:12px;
+  font-size:14px;
+  color:var(--muted);
 }
 
-.login-inline a {
-  color: var(--red);
-  text-decoration: none;
-  font-weight: 700;
+.login-inline a{
+  color:var(--red);
+  text-decoration:none;
+  font-weight:700;
 }
 
 /* Gallery */
-.gallery { margin-top: 80px; }
+.gallery{ margin-top:80px; }
 
-.gallery h3 {
-  font-size: 32px;
-  margin-bottom: 32px;
+.gallery h3{
+  font-size:32px;
+  margin-bottom:32px;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  max-width: 1000px;
+.gallery-grid{
+  display:grid;
+  gap:36px;
+  max-width:900px;
+  margin:0 auto;
+  justify-items:center;
 }
 
-.gallery-grid img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+.gallery-grid img{
+  width:100%;
+  max-width:900px;
+  height:auto;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
-@media (max-width:900px){
-  .hero { grid-template-columns:1fr; }
-  .hero img { justify-self:center; }
-  .plans { grid-template-columns:1fr; }
+/* Tablet */
+@media(max-width:900px){
+  .hero{ grid-template-columns:1fr; }
+  .hero img{ justify-self:center; margin-top:20px; }
+  .plans{ grid-template-columns:1fr; }
 }
 
-@media (max-width:600px){
-  header { padding:12px 16px; }
-  .page { padding:0 16px; margin:16px auto 48px; }
-  .card { padding:32px 20px; border-radius:16px; }
-  .hero { flex-direction:column; display:flex; }
+/* Mobile */
+@media(max-width:600px){
+  header{ padding:12px 16px; }
+  .page{ padding:0 16px; margin:16px auto 48px; }
+  .card{ padding:32px 20px; border-radius:16px; }
+  .hero{ display:flex; flex-direction:column; }
   .hero img{ order:-1; max-width:260px; margin-bottom:24px; }
   h1{ font-size:32px; }
-  .subtitle{ font-size:16px; margin-bottom:20px; }
+  .subtitle{ font-size:16px; }
   .hero-copy h2{ font-size:22px; }
   .hero-copy p{ font-size:15px; }
   .pricing h3,.gallery h3{ font-size:24px; }
   .plan{ padding:24px; }
   .price{ font-size:28px; }
   .cta{ display:block; width:100%; text-align:center; }
-  .gallery-grid img{ max-width:340px; margin:0 auto; display:block; }
 }
 </style>
 </head>
@@ -255,7 +255,7 @@ After each workout, take a quick pic of your ride and say what the ride felt lik
 <h2>Your ride, put into words.</h2>
 
 <p>
-After each ride, take a picture of your summary and add any notes about how you felt or anything else that affected the workout. MyBikingBuddy compares it with your recent rides, recognizes your patterns, and gives feedback that actually listens and remembers.
+After each ride, take a picture of your summary and add notes about how you felt. MyBikingBuddy compares it with your recent rides, recognizes your patterns, and gives feedback that actually listens and remembers.
 </p>
 
 </div>
@@ -263,11 +263,12 @@ After each ride, take a picture of your summary and add any notes about how you 
 <img src="images/mbb-bike.png" alt="MyBikingBuddy Bike" />
 </div>
 
+<!-- PRICING -->
 <div class="pricing">
 <h3>Unlock Your Full Peloton Story</h3>
 
 <p>
-See what every ride has been building toward, your complete history, performance patterns, and coaching shaped by every session you log.
+See your complete history, performance patterns, yearly and all-time records, and coaching shaped by every ride you log.
 </p>
 
 <div class="plans">
@@ -303,7 +304,7 @@ See what every ride has been building toward, your complete history, performance
 </div>
 
 <div style="font-size:13px;color:#777;margin-bottom:14px;">
-No connection to your Peloton account required. Just upload your ride screenshot.
+No connection to your Peloton account required. Just upload your ride history and ride screenshots.
 </div>
 
 <div class="login-inline">
@@ -311,6 +312,7 @@ Already a member?
 <a href="https://mybikingbuddy.glide.page/" target="_blank">Log in to MBB</a>
 </div>
 </div>
+
 <!-- GALLERY -->
 <div class="gallery">
 <h3>Inside <span class="brand-my">My</span>BikingBuddy</h3>
